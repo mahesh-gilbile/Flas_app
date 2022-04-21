@@ -18,9 +18,9 @@ app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
 @app.route('/',methods=['GET'])
 def hello():
     cur = mysql.connection.cursor()
-    # cur.execute("Select * from student_details")
-    # data = cur.fetchall()
-    return jsonify("Hey")
+    cur.execute("Select * from secretory")
+    data = cur.fetchall()
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(debug=True)
